@@ -7,6 +7,8 @@ import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 
 const NavBar = ({ activeSection, setActiveSection }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navItems = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
@@ -25,11 +27,14 @@ const NavBar = ({ activeSection, setActiveSection }) => {
         <div className="text-2xl font-bold text-apple-blue">
           Fanuel D.
         </div>
-        <div className="md:flex md:space-x-8 hidden md:block">
+        <div className="md:flex md:space-x-8 md:block hidden">
           {navItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => setActiveSection(item.id)}
+              onClick={() => {
+                setActiveSection(item.id);
+                setIsMobileMenuOpen(false); // Close menu on selection
+              }}
               className={`px-4 py-2 rounded-apple text-sm font-medium transition-all ${
                 activeSection === item.id
                   ? 'text-apple-blue bg-apple-blue/10 shadow-apple-glow'
@@ -40,9 +45,33 @@ const NavBar = ({ activeSection, setActiveSection }) => {
             </button>
           ))}
         </div>
-        {/* Mobile Menu Button (placeholder) */}
         <div className="md:hidden">
-          <button className="px-4 py-2 text-gray-600">Menu</button>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="px-4 py-2 text-gray-600 focus:outline-none"
+          >
+            {isMobileMenuOpen ? 'Close' : 'Menu'}
+          </button>
+          {isMobileMenuOpen && (
+            <div className="absolute top-16 right-4 w-48 bg-aluminum/90 backdrop-blur-md rounded-apple shadow-apple-glow p-2">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setActiveSection(item.id);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`w-full text-left px-4 py-2 rounded-apple text-sm font-medium transition-all ${
+                    activeSection === item.id
+                      ? 'text-apple-blue bg-apple-blue/10'
+                      : 'text-gray-600 hover:text-apple-blue hover:bg-apple-blue/5'
+                  }`}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </motion.nav>
