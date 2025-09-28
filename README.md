@@ -3,3 +3,4 @@ Starting fresh portfolio build
 Fresh Apple-inspired portfolio deployed.
 Fixed CodeIcon import error.
 Fixed MailIcon import error.
+Resolved CodeIcon ESLint error
