@@ -7,3 +7,4 @@ Resolved CodeIcon ESLint error
 Added profile picture
 add "Fixed profile picture path
 change a new profile image to test if this renders.
+Enhanced mobile menu.
