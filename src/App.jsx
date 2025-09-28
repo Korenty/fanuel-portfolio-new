@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import HeroSection from './components/HeroSection';
+import AboutSection from './components/AboutSection';
+import SkillsSection from './components/SkillsSection';
+import ProjectsSection from './components/ProjectsSection';
+import ContactSection from './components/ContactSection';
 
 const NavBar = ({ activeSection, setActiveSection }) => {
   const navItems = [
     { name: 'Home', id: 'home' },
+    { name: 'About', id: 'about' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'Contact', id: 'contact' },
   ];
 
   return (
@@ -45,12 +53,10 @@ const App = () => {
       <NavBar activeSection={activeSection} setActiveSection={setActiveSection} />
       <main className="pt-20 p-4">
         {activeSection === 'home' && <HeroSection setActiveSection={setActiveSection} />}
-        {activeSection !== 'home' && (
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900">Test Content</h2>
-            <p className="text-gray-600">If you see this, navigation failed.</p>
-          </div>
-        )}
+        {activeSection === 'about' && <AboutSection />}
+        {activeSection === 'skills' && <SkillsSection />}
+        {activeSection === 'projects' && <ProjectsSection />}
+        {activeSection === 'contact' && <ContactSection />}
       </main>
       <footer className="bg-brushed-metal/50 text-gray-600 text-center p-4">
         &copy; 2025 Fanuel Debebe. Built with React & Vision.
