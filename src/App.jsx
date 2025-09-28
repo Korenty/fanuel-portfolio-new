@@ -1,73 +1,19 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CloudIcon, CodeBracketIcon, ServerIcon, UserGroupIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
-import HeroSection from './components/HeroSection'; // Create these as separate files
-import AboutSection from './components/AboutSection';
-import SkillsSection from './components/SkillsSection';
-import ProjectsSection from './components/ProjectsSection';
-import ContactSection from './components/ContactSection';
+import React from 'react';
 
-// NavBar (unchanged)
-const NavBar = ({ activeSection, setActiveSection }) => {
-  const navItems = [
-    { name: 'Home', id: 'home' },
-    { name: 'About', id: 'about' },
-    { name: 'Skills', id: 'skills' },
-    { name: 'Projects', id: 'projects' },
-    { name: 'Contact', id: 'contact' },
-  ];
-
-  return (
-    <motion.nav 
-      initial={{ y: -100 }} 
-      animate={{ y: 0 }} 
-      className="fixed top-0 z-50 w-full bg-aluminum/90 backdrop-blur-md border-b border-brushed-metal/20"
-    >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold text-apple-blue">
-          Fanuel D.
-        </div>
-        <div className="flex space-x-8">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => setActiveSection(item.id)}
-              className={`px-4 py-2 rounded-apple text-sm font-medium transition-all ${
-                activeSection === item.id
-                  ? 'text-apple-blue bg-apple-blue/10 shadow-apple-glow'
-                  : 'text-gray-600 hover:text-apple-blue hover:bg-apple-blue/5'
-              }`}
-            >
-              {item.name}
-            </button>
-          ))}
-        </div>
-      </div>
-    </motion.nav>
-  );
-};
-
-// Main App with Simplified Rendering
 const App = () => {
-  const [activeSection, setActiveSection] = useState('home');
-
   return (
-    <Router>
-      <div className="font-sf-pro bg-aluminum text-gray-900 min-h-screen">
-        <NavBar activeSection={activeSection} setActiveSection={setActiveSection} />
-        <main className="pt-20">
-          {activeSection === 'home' && <HeroSection setActiveSection={setActiveSection} />}
-          {activeSection === 'about' && <AboutSection />}
-          {activeSection === 'skills' && <SkillsSection />}
-          {activeSection === 'projects' && <ProjectsSection />}
-          {activeSection === 'contact' && <ContactSection />}
-        </main>
-        <footer className="bg-brushed-metal/50 text-gray-600 text-center p-4">
-          &copy; 2025 Fanuel Debebe. Built with React & Vision.
-        </footer>
-      </div>
-    </Router>
+    <div className="font-sf-pro bg-aluminum text-gray-900 min-h-screen">
+      <header className="bg-aluminum/90 p-4 text-center">
+        <h1 className="text-2xl font-bold text-apple-blue">Fanuel Debebe</h1>
+      </header>
+      <main className="pt-20 p-4">
+        <h2 className="text-3xl font-bold text-gray-900">Test Content</h2>
+        <p className="text-gray-600">If you see this, React is working!</p>
+      </main>
+      <footer className="bg-brushed-metal/50 text-gray-600 text-center p-4">
+        &copy; 2025 Fanuel Debebe
+      </footer>
+    </div>
   );
 };
 
