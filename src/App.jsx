@@ -21,11 +21,11 @@ const NavBar = ({ activeSection, setActiveSection }) => {
       animate={{ y: 0 }} 
       className="fixed top-0 z-50 w-full bg-aluminum/90 backdrop-blur-md border-b border-brushed-metal/20"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold text-apple-blue">
           Fanuel D.
         </div>
-        <div className="flex space-x-8">
+        <div className="md:flex md:space-x-8 hidden md:block">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -39,6 +39,10 @@ const NavBar = ({ activeSection, setActiveSection }) => {
               {item.name}
             </button>
           ))}
+        </div>
+        {/* Mobile Menu Button (placeholder) */}
+        <div className="md:hidden">
+          <button className="px-4 py-2 text-gray-600">Menu</button>
         </div>
       </div>
     </motion.nav>
