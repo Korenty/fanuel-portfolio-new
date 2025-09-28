@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CloudIcon, CodeBracketIcon, ServerIcon, UserGroupIcon, MailIcon } from '@heroicons/react/24/outline';
+import { CloudIcon, CodeBracketIcon, ServerIcon, UserGroupIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 // Navigation
 const NavBar = ({ activeSection, setActiveSection }) => {
   const navItems = [
@@ -249,7 +249,7 @@ const ContactSection = () => {
         </form>
         <div className="flex justify-center space-x-6 mt-8">
           <a href="https://linkedin.com/in/fanuel-seyoum-867382138" target="_blank" rel="noreferrer">
-            <MailIcon className="w-6 h-6 text-apple-blue hover:text-blue-600" />
+            <EnvelopeIcon className="w-6 h-6 text-apple-blue hover:text-blue-600" />
           </a>
           <a href="https://x.com/fanuel_debebe" target="_blank" rel="noreferrer">
             <UserGroupIcon className="w-6 h-6 text-apple-blue hover:text-blue-600" />
