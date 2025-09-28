@@ -9,6 +9,14 @@ const HeroSection = ({ setActiveSection }) => (
     className="min-h-screen flex items-center justify-center bg-gradient-to-br from-aluminum to-brushed-metal p-6"
   >
     <div className="max-w-7xl mx-auto text-center">
+      <motion.img
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+        src="/profile.jpg" // Update this to your image file name
+        alt="Fanuel Debebe"
+        className="w-48 h-48 rounded-full mx-auto mb-8 object-cover shadow-apple-glow"
+      />
       <motion.h1 
         initial={{ y: 50 }} 
         animate={{ y: 0 }} 
