@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CloudIcon, CodeIcon, ServerIcon, UserGroupIcon, MailIcon } from '@heroicons/react/24/outline';
-
+import { CloudIcon, CodeBracketIcon, ServerIcon, UserGroupIcon, MailIcon } from '@heroicons/react/24/outline';
 // Navigation
 const NavBar = ({ activeSection, setActiveSection }) => {
   const navItems = [
@@ -122,7 +121,7 @@ const SkillsSection = () => (
       <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Tech Arsenal</h2>
       <div className="grid md:grid-cols-3 gap-8">
         <motion.div className="apple-card p-8 text-center" whileHover={{ scale: 1.02 }}>
-          <CloudIcon className="w-12 h-12 text-apple-blue mx-auto mb-4" />
+          <CodeBracketIcon className="w-12 h-12 text-apple-blue mx-auto mb-4" />
           <h3 className="text-xl font-bold text-gray-900 mb-4">Cloud Engineering</h3>
           <div className="space-y-2 text-sm text-gray-600">
             <p>AWS/Azure Fundamentals</p>
