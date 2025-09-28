@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sf-pro bg-aluminum text-gray-900;
+  }
+}
+
+@layer components {
+  .apple-card {
+    @apply bg-white/80 backdrop-blur-md rounded-apple shadow-apple-glow border border-brushed-metal/20;
+  }
+}
