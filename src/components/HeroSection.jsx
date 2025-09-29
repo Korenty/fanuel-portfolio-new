@@ -13,9 +13,9 @@ const HeroSection = ({ setActiveSection }) => (
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5 }}
-        src="/fanuel-portfolio-new/profile.jpg" // Update this to your image file name
+        src={process.env.PUBLIC_URL + '/profile.jpg'} // Update this to your image file name
         alt="Fanuel Debebe"
-        className="w-40 h-40 rounded-full mx-auto mb-8 object-cover shadow-apple-glow"
+        className="w-64 h-64 rounded-full mx-auto mb-8 object-cover shadow-apple-glow"
       />
       <motion.h1 
         initial={{ y: 50 }} 
